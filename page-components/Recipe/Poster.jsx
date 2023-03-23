@@ -48,8 +48,8 @@ const PosterInner = ({ user }) => {
         <Input
           ref={contentRef}
           className={styles.input}
-          placeholder={`What's on your mind, ${user.name}?`}
-          ariaLabel={`What's on your mind, ${user.name}?`}
+          placeholder={`What food are you thinking about, ${user.name}?`}
+          ariaLabel={`What food are you thinking about, ${user.name}?`}
         />
         <Button type="success" loading={isLoading}>
           Post
@@ -66,7 +66,7 @@ const Poster = () => {
   return (
     <Wrapper>
       <div className={styles.root}>
-        <h3 className={styles.heading}>Share your thoughts</h3>
+        <h3 className={styles.heading}>Share your recipe</h3>
         {loading ? (
           <LoadingDots>Loading</LoadingDots>
         ) : data?.user ? (
@@ -76,7 +76,7 @@ const Poster = () => {
             Please{' '}
             <Link href="/login" passHref>
               <TextLink color="link" variant="highlight">
-                sign in
+                log in
               </TextLink>
             </Link>{' '}
             to post

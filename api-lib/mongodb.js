@@ -6,9 +6,6 @@ async function createIndexes(client) {
   const db = client.db();
   await Promise.all([
     db
-      .collection('tokens')
-      .createIndex({ expireAt: -1 }, { expireAfterSeconds: 0 }),
-    db
       .collection('posts')
       .createIndexes([{ key: { createdAt: -1 } }, { key: { creatorId: -1 } }]),
     db

@@ -8,20 +8,22 @@ const Hero = () => {
     <Wrapper>
       <div>
         <h1 className={styles.title}>
-          <span className={styles.nextjs}>Next.js</span>
-          <span className={styles.mongodb}>MongoDB</span>
+          <span className={styles.nextjs}>Culinary</span>
+          <span className={styles.mongodb}>Corner</span>
           <span>App</span>
         </h1>
         <Container justifyContent="center" className={styles.buttons}>
           <Container>
-            <Link passHref href="/feed">
-              <ButtonLink className={styles.button}>Explore Feed</ButtonLink>
+            <Link passHref href="/recipe">
+              <ButtonLink className={styles.button}>
+                Enter recipe list
+              </ButtonLink>
             </Link>
           </Container>
           <Spacer axis="horizontal" size={1} />
           <Container>
             <ButtonLink
-              href="https://github.com/hoangvvo/nextjs-mongodb-app"
+              href="https://github.com/yeeeehao/project2-culinaryCorner"
               type="secondary"
               className={styles.button}
             >
@@ -30,8 +32,8 @@ const Hero = () => {
           </Container>
         </Container>
         <p className={styles.subtitle}>
-          A Next.js and MongoDB web application, designed with simplicity for
-          learning and real-world applicability in mind.
+          Culinary Corner aims to provide users with an easy-to-use platform for
+          finding and sharing recipes.
         </p>
       </div>
     </Wrapper>

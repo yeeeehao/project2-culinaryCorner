@@ -56,7 +56,6 @@ export async function insertUser(
   { email, originalPassword, bio = '', name, profilePicture, username }
 ) {
   const user = {
-    emailVerified: false,
     profilePicture,
     email,
     name,
@@ -99,6 +98,5 @@ export function dbProjectionUsers(prefix = '') {
   return {
     [`${prefix}password`]: 0,
     [`${prefix}email`]: 0,
-    [`${prefix}emailVerified`]: 0,
   };
 }

@@ -10,43 +10,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import styles from './Settings.module.css';
 
-const EmailVerify = ({ user }) => {
-  const [status, setStatus] = useState();
-  const verify = useCallback(async () => {
-    try {
-      setStatus('loading');
-      await fetcher('/api/user/email/verify', { method: 'POST' });
-      toast.success(
-        'An email has been sent to your mailbox. Follow the instruction to verify your email.'
-      );
-      setStatus('success');
-    } catch (e) {
-      toast.error(e.message);
-      setStatus('');
-    }
-  }, []);
-  if (user.emailVerified) return null;
-  return (
-    <Container className={styles.note}>
-      <Container flex={1}>
-        <p>
-          <strong>Note:</strong> <span>Your email</span> (
-          <span className={styles.link}>{user.email}</span>) is unverified.
-        </p>
-      </Container>
-      <Spacer size={1} axis="horizontal" />
-      <Button
-        loading={status === 'loading'}
-        size="small"
-        onClick={verify}
-        disabled={status === 'success'}
-      >
-        Verify
-      </Button>
-    </Container>
-  );
-};
-
 const Auth = () => {
   const oldPasswordRef = useRef();
   const newPasswordRef = useRef();
@@ -209,7 +172,6 @@ export const Settings = () => {
       <Spacer size={2} axis="vertical" />
       {data?.user ? (
         <>
-          <EmailVerify user={data.user} />
           <AboutYou user={data.user} mutate={mutate} />
           <Auth user={data.user} />
         </>
