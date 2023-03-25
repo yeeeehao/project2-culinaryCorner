@@ -27,7 +27,7 @@ const Post = ({ post, className }) => {
     for (let i = 0; i < paragraph.length; i++) {
       currentLine += paragraph[i];
 
-      if (currentLine.length >= 50) {
+      if (currentLine.length >= 75) {
         paragraphs.push(currentLine.trim());
         currentLine = '';
       }
@@ -38,10 +38,35 @@ const Post = ({ post, className }) => {
     }
   });
 
+  const text2 = post.recipeName;
+  const splitByNewline2 = text2.split(/\r|\n/);
+  const paragraphs2 = [];
+
+  splitByNewline2.forEach((paragraph2) => {
+    let currentLine = '';
+
+    for (let i = 0; i < paragraph2.length; i++) {
+      currentLine += paragraph2[i];
+
+      if (currentLine.length >= 30) {
+        paragraphs2.push(currentLine.trim());
+        currentLine = '';
+      }
+    }
+
+    if (currentLine) {
+      paragraphs2.push(currentLine.trim());
+    }
+  });
+
   return (
     <div className={clsx(styles.root, className)}>
       <div className={styles.Wrap}>
-        <p className={styles.bigName}>{post.recipeName}</p>
+        <p className={styles.bigName}>
+          {paragraphs2.map((paragraph2, index) => (
+            <p key={index}>{paragraph2}</p>
+          ))}
+        </p>
         <Spacer size={3} axis="vertical" />
         <RecipeImg size={500} url={post.recipePicture}></RecipeImg>
         <Spacer size={1} axis="vertical" />
