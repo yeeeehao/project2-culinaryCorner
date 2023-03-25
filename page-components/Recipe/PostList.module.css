@@ -13,3 +13,21 @@
   background: var(--accents-1);
   transition: ease 0.15s background;
 }
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.filterBar label {
+  margin-right: 0.5rem;
+}
+
+.filterBar select {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

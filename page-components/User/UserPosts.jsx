@@ -20,7 +20,7 @@ const UserPosts = ({ user }) => {
       <Spacer axis="vertical" size={1} />
       <Wrapper>
         {posts.map((post) => (
-          <Post2 className={styles.post} post={post} />
+          <Post2 key={post._id} className={styles.post} post={post} />
         ))}
         <Container justifyContent="center">
           {isReachingEnd ? (

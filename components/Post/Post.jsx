@@ -62,11 +62,11 @@ const Post = ({ post, className }) => {
   return (
     <div className={clsx(styles.root, className)}>
       <div className={styles.Wrap}>
-        <p className={styles.bigName}>
+        <div className={styles.bigName}>
           {paragraphs2.map((paragraph2, index) => (
             <p key={index}>{paragraph2}</p>
           ))}
-        </p>
+        </div>
         <Spacer size={3} axis="vertical" />
         <RecipeImg size={500} url={post.recipePicture}></RecipeImg>
         <Spacer size={1} axis="vertical" />
