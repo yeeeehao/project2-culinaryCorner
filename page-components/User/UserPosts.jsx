@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button';
 import { Container, Spacer } from '@/components/Layout';
 import Wrapper from '@/components/Layout/Wrapper';
-import { Post } from '@/components/Post';
+import { Post2 } from '@/components/Post';
 import { Text } from '@/components/Text';
 import { usePostPages } from '@/lib/post';
 import Link from 'next/link';
@@ -20,14 +20,7 @@ const UserPosts = ({ user }) => {
       <Spacer axis="vertical" size={1} />
       <Wrapper>
         {posts.map((post) => (
-          <Link
-            key={post._id}
-            href={`/user/${post.creator.username}/post/${post._id}`}
-          >
-            <a className={styles.wrap}>
-              <Post className={styles.post} post={post} />
-            </a>
-          </Link>
+          <Post2 className={styles.post} post={post} />
         ))}
         <Container justifyContent="center">
           {isReachingEnd ? (

@@ -105,9 +105,14 @@ const Nav = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Link href="/">
-            <a className={styles.logo}>Culinary Corner</a>
-          </Link>
+          <Container>
+            <Link href="/">
+              <a className={styles.logo}>Culinary Corner</a>
+            </Link>
+            <Link href="/recipe">
+              <a className={styles.logo1}>Recipe List</a>
+            </Link>
+          </Container>
           <Container>
             {user ? (
               <>

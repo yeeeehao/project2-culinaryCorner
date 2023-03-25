@@ -19,6 +19,13 @@
 
 .poster {
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.endbutton {
+  position: absolute;
+  right: 0;
 }
 
 .heading {

@@ -18,42 +18,15 @@ const PosterInner = ({ user }) => {
 
   const { mutate } = usePostPages();
 
-  const onSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
-      try {
-        setIsLoading(true);
-        await fetcher('/api/posts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ content: contentRef.current.value }),
-        });
-        toast.success('You have posted successfully');
-        contentRef.current.value = '';
-        // refresh post lists
-        mutate();
-      } catch (e) {
-        toast.error(e.message);
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [mutate]
-  );
-
   return (
-    <form onSubmit={onSubmit}>
+    <form>
       <Container className={styles.poster}>
         <Avatar size={40} username={user.username} url={user.profilePicture} />
-        <Input
-          ref={contentRef}
-          className={styles.input}
-          placeholder={`What food are you thinking about, ${user.name}?`}
-          ariaLabel={`What food are you thinking about, ${user.name}?`}
-        />
-        <Button type="success" loading={isLoading}>
-          Post
-        </Button>
+        <div>&nbsp;&nbsp;</div>
+        <Text> What food are you thinking about, {user.name}? </Text>
+        <Link href="/post">
+          <Button className={styles.endbutton}>Post</Button>
+        </Link>
       </Container>
     </form>
   );

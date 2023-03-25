@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button';
 import { Container, Spacer } from '@/components/Layout';
 import Wrapper from '@/components/Layout/Wrapper';
-import { Post } from '@/components/Post';
+import { Post1 } from '@/components/Post';
 import { Text } from '@/components/Text';
 import { usePostPages } from '@/lib/post';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ const PostList = () => {
             passHref
           >
             <div className={styles.wrap}>
-              <Post className={styles.post} post={post} />
+              <Post1 className={styles.post} post={post} />
             </div>
           </Link>
         ))}
