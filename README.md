@@ -8,7 +8,6 @@
 
 - Chuangjian Xia (6328003)
 
-<h2></h2>
 
 <div align="center">
 
