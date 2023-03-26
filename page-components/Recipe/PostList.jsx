@@ -106,8 +106,8 @@ const PostList = () => {
         </div>
         <Spacer axis="vertical" size={1} />
         {filteredPosts.map((post) => (
-          <div>
-            <Post1 key={post._id} className={styles.post} post={post} />
+          <div key={post._id}>
+            <Post1 className={styles.post} post={post} />
             <Spacer axis="vertical" size={0.5} />
           </div>
         ))}

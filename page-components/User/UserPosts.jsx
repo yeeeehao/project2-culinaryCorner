@@ -20,8 +20,8 @@ const UserPosts = ({ user }) => {
       <Spacer axis="vertical" size={1} />
       <Wrapper>
         {posts.map((post) => (
-          <div>
-            <Post2 key={post._id} className={styles.post} post={post} />
+          <div key={post._id}>
+            <Post2 className={styles.post} post={post} />
             <Spacer axis="vertical" size={0.5} />
           </div>
         ))}
