@@ -2,11 +2,11 @@
 
 <h2 align="center">Team Members</h2>
 
-<div>Hao Ye (6238023)</div>
+- Hao Ye (6238023)
 
-<div>Juan Wang (6218207)</div>
+- Juan Wang (6218207)
 
-<div>Chuangjian Xia (6328003)</div>
+- Chuangjian Xia (6328003)
 
 <h2></h2>
 
