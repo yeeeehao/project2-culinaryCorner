@@ -2,9 +2,9 @@
 
 <h2 align="center">Team Members</h2>
 
-<h3 align="center">Hao Ye (6238023)</h3>
-<h3 align="center">Juan Wang (6218207)</h3>
-<h3 align="center">Chuangjian Xia (6328003)</h3>
+<div>Hao Ye (6238023)</div>
+<div>Juan Wang (6218207)</div>
+<div>Chuangjian Xia (6328003)</div>
 
 <div align="center">
 
