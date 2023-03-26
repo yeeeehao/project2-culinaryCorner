@@ -11,7 +11,7 @@
 
 <div align="center">
 
-An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage, and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
+An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage(therefore, the contributors include all the creators of the original project), and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
 
 :rocket: [Check out the demo](https://culinary-corner.vercel.app/) :rocket:
 
