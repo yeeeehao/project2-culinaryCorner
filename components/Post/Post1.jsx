@@ -7,6 +7,8 @@ import { format } from '@lukeed/ms';
 import clsx from 'clsx';
 import { useMemo } from 'react';
 import styles from './Post.module.css';
+import Link from 'next/link';
+import { Button } from '../Button';
 
 const Post = ({ post, className }) => {
   const timestampTxt = useMemo(() => {
@@ -19,16 +21,23 @@ const Post = ({ post, className }) => {
     post.content.length > 20 ? post.content.slice(0, 100) : post.content;
   return (
     <div className={clsx(styles.root, className)}>
-      <Container className={styles.creator}>
-        <RecipeImg size={100} url={post.recipePicture}></RecipeImg>
-        <Container column className={styles.meta}>
-          <p className={styles.name}>{post.recipeName}</p>
-          <Spacer size={0.2} axis="vertical" />
-          <p className={styles.category}>{post.category}</p>
-          <Spacer size={0.2} axis="vertical" />
-          <p className={styles.content}>{shortenedWords}...</p>
-        </Container>
-      </Container>
+      <Link
+        key={post._id}
+        href={`/user/${post.creator.username}/post/${post._id}`}
+      >
+        <a className={styles.wrap2}>
+          <Container className={styles.creator}>
+            <RecipeImg size={100} url={post.recipePicture}></RecipeImg>
+            <Container column className={styles.meta}>
+              <p className={styles.name}>{post.recipeName}</p>
+              <Spacer size={0.2} axis="vertical" />
+              <p className={styles.category}>{post.category}</p>
+              <Spacer size={0.2} axis="vertical" />
+              <p className={styles.content}>{shortenedWords}...</p>
+            </Container>
+          </Container>
+        </a>
+      </Link>
 
       <div className={styles.wrap}>
         <time dateTime={String(post.createdAt)} className={styles.timestamp}>

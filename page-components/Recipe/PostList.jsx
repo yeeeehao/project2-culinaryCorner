@@ -106,15 +106,10 @@ const PostList = () => {
         </div>
         <Spacer axis="vertical" size={1} />
         {filteredPosts.map((post) => (
-          <Link
-            key={post._id}
-            href={`/user/${post.creator.username}/post/${post._id}`}
-            passHref
-          >
-            <div className={styles.wrap}>
-              <Post1 className={styles.post} post={post} />
-            </div>
-          </Link>
+          <div>
+            <Post1 className={styles.post} post={post} />
+            <Spacer axis="vertical" size={0.5} />
+          </div>
         ))}
         <Container justifyContent="center">
           {isReachingEnd ? (

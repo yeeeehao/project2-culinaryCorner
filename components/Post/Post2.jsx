@@ -160,16 +160,6 @@ const Post = ({ post, className }) => {
             </a>
           </Link>
 
-          <div className={styles.wrap}>
-            <time
-              dateTime={String(post.createdAt)}
-              className={styles.timestamp}
-            >
-              {timestampTxt}
-            </time>
-          </div>
-          <Spacer size={0.5} axis="vertical" />
-
           {isCreator && (
             <div className={styles.buttonGroup}>
               <Button type="success" onClick={() => setIsEditing(true)}>
@@ -178,6 +168,15 @@ const Post = ({ post, className }) => {
               <Button onClick={() => deletePost(post._id)}>Delete</Button>
             </div>
           )}
+
+          <div className={styles.wrap}>
+            <time
+              dateTime={String(post.createdAt)}
+              className={styles.timestamp}
+            >
+              {timestampTxt}
+            </time>
+          </div>
         </>
       )}
     </div>
