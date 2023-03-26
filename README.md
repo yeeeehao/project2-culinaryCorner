@@ -3,8 +3,12 @@
 <h2 align="center">Team Members</h2>
 
 <div>Hao Ye (6238023)</div>
+
 <div>Juan Wang (6218207)</div>
+
 <div>Chuangjian Xia (6328003)</div>
+
+<h2></h2>
 
 <div align="center">
 
