@@ -1,33 +1,14 @@
-[![Next.js](https://assets.zeit.co/image/upload/v1538361091/repositories/next-js/next-js.png)](https://nextjs.org)
-
-<h1 align="center">Next.js ❤️ MongoDB</h1>
+<h1 align="center">Culinary Corner</h1>
 
 <div align="center">
-  
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhoangvvo%2Fnextjs-mongodb-app&env=MONGODB_URI,CLOUDINARY_URL,NODEMAILER_CONFIG,WEB_URI&envDescription=Environment%20Variables&envLink=https%3A%2F%2Fgithub.com%2Fhoangvvo%2Fnextjs-mongodb-app%23environmental-variables&demo-title=nextjs-mongodb-app%20demo&demo-description=A%20demo%20deployed%20on%20Vercel&demo-url=https%3A%2F%2Fnextjs-mongodb.vercel.app%2F)
 
-An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, designed with simplicity for learning and real-world applicability in mind.
+An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage, and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
 
-:rocket: [Check out the demo](https://nextjs-mongodb.vercel.app/) :rocket:
+:rocket: [Check out the demo](https://culinary-corner.vercel.app/) :rocket:
 
 </div>
 
 <h2 align="center">Features</h2>
-
-<div align="center">
-
-🐇 Fast and light without [bulky](https://bundlephobia.com/result?p=express@4.17.1), [slow](https://github.com/fastify/benchmarks#benchmarks) Express.js.
-
-✨ Full [API Routes](https://nextjs.org/blog/next-9#api-routes) implementation and 👻 Serverless ready
-
-🤠 Good ol' Middleware pattern, compatible with Express ecosystem, powered by [next-connect](https://github.com/hoangvvo/next-connect)
-
-💋 [KISS](https://en.wikipedia.org/wiki/KISS_principle): No fancy stuff like GraphQL, SASS, Redux, etc.
-✍️ Come with explanatory blog posts
-
-📙 Can be adapted to any databases besides MongoDB (Just update [api-lib/db](api-lib/db))
-
-</div>
 
 <h3 align="center">:lock: Authentication and Account</h3>
 
@@ -35,11 +16,7 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 
 - [x] Session-based authentication ([Passport.js](https://github.com/jaredhanson/passport))
 - [x] Sign up/Log in/Sign out API
-- [x] Authentication via email/password
-- [ ] Authentication via OAuth (Google, Facebook, etc.)
-- [x] Email verification
 - [x] Password change
-- [x] Password reset via email
 
 </div>
 
@@ -52,7 +29,7 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 
 </div>
 
-<h3 align="center">:eyes: Social</h3>
+<h3 align="center">:✨: Functions</h3>
 
 <div align="center">
 
