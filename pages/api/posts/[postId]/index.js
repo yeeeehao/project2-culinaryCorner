@@ -75,7 +75,6 @@ handler.patch(
         crop: 'fill',
       });
       recipePicture = image.secure_url;
-      console.log(recipePicture);
     }
 
     const { recipeName, content, category } = req.body;
