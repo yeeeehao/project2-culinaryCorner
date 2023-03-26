@@ -47,7 +47,7 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 - [x] Modify and delete self-published posts
 - [x] List recipes by recipe categories and list recipes by search
 - [x] Get random recipe recommendations
-- [] Users can bookmark recipes and view them (not done)
+- [ ] Users can bookmark recipes and view them (not done)
 
 </div>
 
