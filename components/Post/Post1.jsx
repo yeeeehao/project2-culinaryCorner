@@ -8,7 +8,6 @@ import clsx from 'clsx';
 import { useMemo } from 'react';
 import styles from './Post.module.css';
 import Link from 'next/link';
-import { Button } from '../Button';
 
 const Post = ({ post, className }) => {
   const timestampTxt = useMemo(() => {
