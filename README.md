@@ -1,5 +1,11 @@
 <h1 align="center">Web Project2 - Culinary Corner</h1>
 
+<h2 align="center">Team Members</h2>
+
+<h3 align="center">Hao Ye (6238023)</h3>
+<h3 align="center">Juan Wang (6218207)</h3>
+<h3 align="center">Chuangjian Xia (6328003)</h3>
+
 <div align="center">
 
 An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage, and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
@@ -38,6 +44,7 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 - [x] Modify and delete self-published posts
 - [x] List recipes by recipe categories and list recipes by search
 - [x] Get random recipe recommendations
+- [] Users can bookmark recipes and view them (not done)
 
 </div>
 
