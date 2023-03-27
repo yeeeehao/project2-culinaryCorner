@@ -80,9 +80,9 @@ const PosterInner = ({ user }) => {
                 >
                   <a className={styles.bookmark}>{bookmark.recipeName}</a>
                 </Link>
-                <button onClick={() => removeBookmark(bookmark._id)}>
+                <Button onClick={() => removeBookmark(bookmark._id)}>
                   remove
-                </button>
+                </Button>
               </div>
             ))}
           </ul>
