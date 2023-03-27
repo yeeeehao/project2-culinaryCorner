@@ -1,8 +1,17 @@
-<h1 align="center">Culinary Corner</h1>
+<h1 align="center">Web Project2 - Culinary Corner</h1>
+
+<h2 align="center">Team Members</h2>
+
+- Hao Ye (6238023)
+
+- Juan Wang (6218207)
+
+- Chuangjian Xia (6328003)
+
 
 <div align="center">
 
-An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage, and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
+An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, We used the framework of [**nextjs-mongodb-app**](https://github.com/hoangvvo/nextjs-mongodb-app) when designing the webpage (therefore, the contributors include all the creators of the original project), and made a series of modifications according to the [**Proposal**](https://github.com/yeeeehao/project2).
 
 :rocket: [Check out the demo](https://culinary-corner.vercel.app/) :rocket:
 
@@ -29,20 +38,19 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 
 </div>
 
-<h3 align="center">:✨: Functions</h3>
+<h3 align="center">✨ Main Functions</h3>
 
 <div align="center">
 
-- [x] View others' profiles
-- [x] Posts and comments
+- [x] View other people's profiles and posts
+- [x] Publish recipe posts and comments
+- [x] Modify and delete self-published posts
+- [x] List recipes by recipe categories and list recipes by search
+- [x] Get random recipe recommendations
+- [ ] Users can bookmark recipes and view them (not done)
 
 </div>
 
-<div align="center">
-  
-<sup>Have any features that interest you, [make an issue](https://github.com/hoangvvo/nextjs-mongodb-app/issues). Would like to work on a feature, [make a PR](https://github.com/hoangvvo/nextjs-mongodb-app/pulls).<sup>
-  
-</div>
 
 <h2 align="center">Guide</h2>
 
@@ -50,12 +58,7 @@ This project accompanies the following posts:
 
 - [User authentication (using Passport.js)](https://hoangvvo.com/blog/next-js-and-mongodb-app-1)
 - [User profile and Profile Picture](https://hoangvvo.com/blog/next-js-and-mongodb-app-2)
-- [Email Verification, Password Reset/Changee](https://hoangvvo.com/blog/next-js-and-mongodb-app-3)
 - [Posts and comments](https://hoangvvo.com/blog/next-js-and-mongodb-app-4)
-
-Also check them out on [dev.to](https://dev.to/hoangvvo).
-
-Although the project is written to be secure, its simplicity requires careful considerations for usage in sensitive productions. [File an issue](https://github.com/hoangvvo/nextjs-mongodb-app/issues/new/choose) if you spot any security problems.
 
 <h3 align="center">Dependencies</h3>
 
@@ -75,7 +78,6 @@ This project uses the following dependencies:
 - `multer` - may be replaced with any middleware that handles `multipart/form-data`
 - `cloudinary` - optional, **only if** you are using [Cloudinary](https://cloudinary.com) for image upload.
 - several other optional dependencies for cosmetic purposes.
-- `nodemailer` - optional, **only if** you use it for email. It is recommended to use 3rd party services like [Mailgun](https://www.mailgun.com/), [AWS SES](https://aws.amazon.com/ses/), etc. instead.
 
 <h3 align="center">Environmental variables</h3>
 
@@ -84,7 +86,6 @@ Environmental variables in this project include:
 - `MONGODB_URI` The MongoDB Connection String (with credentials and database name)
 - `WEB_URI` The _URL_ of your web app.
 - `CLOUDINARY_URL` (optional, Cloudinary **only**) Cloudinary environment variable for configuration. See [this](https://cloudinary.com/documentation/node_integration#configuration).
-- `NODEMAILER_CONFIG` (optional, if using nodemailer **only**) JSON stringified nodemailer config. eg. `{"service":"Gmail","auth":{"user":"hoangvvo.02@gmail.com","pass":"aHR0cHM6Ly95b3V0dS5iZS9kUXc0dzlXZ1hjUQ=="}}`
 
 <h3 align="center">Development</h3>
 
@@ -98,14 +99,6 @@ After building using `npm run build`, simply start the server using `npm run sta
 
 You can also deploy this with serverless providers given the correct setup.
 
-<h2 align="center">Contributing</h2>
-
-<div align="center">
-  
-Please see my [contributing.md](CONTRIBUTING.md).
-
-</div>
-
 <h2 align="center">
   License
 </h2>
@@ -115,4 +108,3 @@ Please see my [contributing.md](CONTRIBUTING.md).
   [MIT](LICENSE)
   
 </div>
-"# project2-culinaryCorner" 
