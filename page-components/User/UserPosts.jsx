@@ -4,7 +4,6 @@ import Wrapper from '@/components/Layout/Wrapper';
 import { Post2 } from '@/components/Post';
 import { Text } from '@/components/Text';
 import { usePostPages } from '@/lib/post';
-import Link from 'next/link';
 import styles from './UserPosts.module.css';
 
 const UserPosts = ({ user }) => {

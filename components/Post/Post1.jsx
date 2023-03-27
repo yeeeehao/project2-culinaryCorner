@@ -8,6 +8,12 @@ import clsx from 'clsx';
 import { useMemo } from 'react';
 import styles from './Post.module.css';
 import Link from 'next/link';
+import { fetcher } from '@/lib/fetch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useCurrentUser } from '@/lib/user';
+import { LoadingDots } from '@/components/LoadingDots';
+import toast from 'react-hot-toast';
 
 const Post = ({ post, className }) => {
   const timestampTxt = useMemo(() => {
@@ -16,8 +22,30 @@ const Post = ({ post, className }) => {
     return `${format(diff, true)} ago`;
   }, [post.createdAt]);
 
+  const { data, error } = useCurrentUser();
+  const loading = !data && !error;
+
   const shortenedWords =
     post.content.length > 20 ? post.content.slice(0, 100) : post.content;
+
+  const handleAddBookmark = async () => {
+    try {
+      await fetcher('/api/bookmarks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          recipeName: post.recipeName,
+          recipeId: post._id,
+        }),
+      });
+      toast.success('You have added bookmark successfully');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className={clsx(styles.root, className)}>
       <Link
@@ -37,6 +65,16 @@ const Post = ({ post, className }) => {
           </Container>
         </a>
       </Link>
+
+      {loading ? (
+        <LoadingDots>Loading</LoadingDots>
+      ) : data?.user ? (
+        <button className={styles.iconButton} onClick={handleAddBookmark}>
+          <FontAwesomeIcon icon={faStar} />
+        </button>
+      ) : (
+        <div></div>
+      )}
 
       <div className={styles.wrap}>
         <time dateTime={String(post.createdAt)} className={styles.timestamp}>

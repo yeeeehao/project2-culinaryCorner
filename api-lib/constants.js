@@ -14,4 +14,8 @@ export const ValidateProps = {
   comment: {
     content: { type: 'string', minLength: 1, maxLength: 280 },
   },
+  bookmark: {
+    recipeName: { type: 'string', minLength: 1, maxLength: 1000 },
+    recipeId: { type: 'string', minLength: 1, maxLength: 1000 },
+  },
 };

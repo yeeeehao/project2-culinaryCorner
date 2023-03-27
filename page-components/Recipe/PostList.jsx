@@ -67,7 +67,6 @@ const PostList = () => {
     const n = allPosts.length;
     const [n1, n2] = getRandomNumbers(n);
     setRandomMenu(allPosts[n1]);
-    console.log(randomMenu);
     setModalIsOpen(true);
   };
 
@@ -79,14 +78,6 @@ const PostList = () => {
     <div className={styles.root}>
       <Spacer axis="vertical" size={1} />
       <Wrapper>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="Search by recipe name"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <Spacer axis="vertical" size={1} />
         <div className={styles.filterAndButtonContainer}>
           <div className={styles.filterBar}>
             <label htmlFor="categorySelect">Filter by category: </label>
@@ -104,6 +95,14 @@ const PostList = () => {
           </div>
           <Button onClick={openModal}>Random Recipe</Button>
         </div>
+        <Spacer axis="vertical" size={1} />
+        <input
+          className={styles.input}
+          type="text"
+          placeholder="Search by recipe name"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
         <Spacer axis="vertical" size={1} />
         {filteredPosts.map((post) => (
           <div key={post._id}>

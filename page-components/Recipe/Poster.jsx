@@ -1,34 +1,96 @@
 import { Avatar } from '@/components/Avatar';
 import { Button } from '@/components/Button';
-import { Input } from '@/components/Input';
-import { Container, Wrapper } from '@/components/Layout';
+import { Container, Spacer, Wrapper } from '@/components/Layout';
 import { LoadingDots } from '@/components/LoadingDots';
 import { Text, TextLink } from '@/components/Text';
-import { fetcher } from '@/lib/fetch';
-import { usePostPages } from '@/lib/post';
 import { useCurrentUser } from '@/lib/user';
+import { fetcher } from '@/lib/fetch';
 import Link from 'next/link';
-import { useCallback, useRef, useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import styles from './Poster.module.css';
+import Modal from 'react-modal';
 
 const PosterInner = ({ user }) => {
-  const contentRef = useRef();
-  const [isLoading, setIsLoading] = useState(false);
+  const [bookmarksModalIsOpen, setBookmarksModalIsOpen] = useState(false);
+  const [bookmarks, setBookmarks] = useState([]);
 
-  const { mutate } = usePostPages();
+  const openBookmarksModal = async () => {
+    if (!user) {
+      return;
+    }
+
+    const response = await fetch(`/api/bookmarks`);
+    const data = await response.json();
+    const filteredBookmarks = data.bookmarks.filter(
+      (bookmark) => bookmark.creatorId === user._id
+    );
+
+    setBookmarks(filteredBookmarks);
+    setBookmarksModalIsOpen(true);
+  };
+
+  const closeBookmarksModal = () => {
+    setBookmarksModalIsOpen(false);
+  };
+
+  const removeBookmark = async (bookmarkId) => {
+    try {
+      await fetcher(`/api/bookmarks/${bookmarkId}`, {
+        method: 'DELETE',
+      });
+      toast.success('Bookmark has been removed successfully');
+
+      window.location.reload();
+    } catch (e) {
+      toast.error(e.message);
+    }
+  };
 
   return (
-    <form>
+    <>
       <Container className={styles.poster}>
         <Avatar size={40} username={user.username} url={user.profilePicture} />
         <div>&nbsp;&nbsp;</div>
         <Text> What food are you thinking about, {user.name}? </Text>
+        <Button className={styles.endbutton2} onClick={openBookmarksModal}>
+          Bookmarks
+        </Button>
         <Link href="/post">
           <Button className={styles.endbutton}>Post</Button>
         </Link>
       </Container>
-    </form>
+      <Modal
+        isOpen={bookmarksModalIsOpen}
+        onRequestClose={closeBookmarksModal}
+        contentLabel="Bookmarks"
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <h2>My Bookmarks</h2>
+        {bookmarks.length === 0 ? (
+          <p>No bookmarks found.</p>
+        ) : (
+          <ul className={styles.bookmarksList}>
+            {bookmarks.map((bookmark) => (
+              <div className={styles.linkAndButton} key={bookmark._id}>
+                <Link
+                  href={`/user/${bookmark.creator.username}/post/${bookmark.recipeId}`}
+                  passHref
+                >
+                  <a className={styles.bookmark}>{bookmark.recipeName}</a>
+                </Link>
+                <button onClick={() => removeBookmark(bookmark._id)}>
+                  remove
+                </button>
+              </div>
+            ))}
+          </ul>
+        )}
+        <Spacer axis="vertical" size={1} />
+        <Button onClick={closeBookmarksModal}>Close</Button>
+      </Modal>
+    </>
   );
 };
 
