@@ -1,9 +1,5 @@
 import { ValidateProps } from '@/api-lib/constants';
-import {
-  findBookmarks,
-  insertBookmark,
-  deleteBookmark,
-} from '@/api-lib/db/bookmark';
+import { findBookmarks, insertBookmark } from '@/api-lib/db/bookmark';
 import { auths, validateBody } from '@/api-lib/middlewares';
 import { getMongoDb } from '@/api-lib/mongodb';
 import { ncOpts } from '@/api-lib/nc';
