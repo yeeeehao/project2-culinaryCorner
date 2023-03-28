@@ -15,6 +15,8 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 
 :rocket: [Check out the demo](https://culinary-corner.vercel.app/) :rocket:
 
+📀 [Watch web video](https://youtu.be/wsCTnpeTf7Q) 📀
+
 </div>
 
 <h2 align="center">Features</h2>
